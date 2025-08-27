@@ -1,9 +1,9 @@
 FROM golang:1.25 AS builder
 WORKDIR /app
-COPY go.mod ./
+COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
-RUN CGO_ENABLED=0 go build -o /app/member-handler-gok
+RUN CGO_ENABLED=0 go build -o /app/member-handler-go
 
 FROM alpine:latest
 WORKDIR /root
