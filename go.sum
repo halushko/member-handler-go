@@ -219,10 +219,8 @@ github.com/googleapis/gax-go/v2 v2.4.0/go.mod h1:XOTVJ59hdnfJLIP/dh8n5CGryZR2LxK
 github.com/googleapis/google-cloud-go-testing v0.0.0-20200911160855-bcd43fbb19e8/go.mod h1:dvDLG8qkwmyD9a/MJJN3XJcT3xFxOKAvTZGvuZmac9g=
 github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0/go.mod h1:8NvIoxWQoOIhqOTXgfV/d3M/q6VIi02HzZEHgUlZvzk=
 github.com/grpc-ecosystem/grpc-gateway v1.16.0/go.mod h1:BDjrQk3hbvj6Nolgz8mAMFbcEtjT1g+wF4CSlocrBnw=
-github.com/halushko/core-go v1.1.13 h1:WgL4crggPi6Iyklj1kpzYetB5XfBjOd13mvZVjnLZHc=
-github.com/halushko/core-go v1.1.13/go.mod h1:DRfobC+SKGGeDbtKeQP8Tkrq4iYF4dZ2sxmTAlreNO4=
-github.com/halushko/core-go v1.1.14/go.mod h1:DRfobC+SKGGeDbtKeQP8Tkrq4iYF4dZ2sxmTAlreNO4=
-github.com/halushko/core-go v1.1.15/go.mod h1:DRfobC+SKGGeDbtKeQP8Tkrq4iYF4dZ2sxmTAlreNO4=
+github.com/halushko/core-go v1.1.16 h1:YwC4Wvpxw/cFD2U1suvDC9XxAiMFdyjNOcV0+Cdz2+g=
+github.com/halushko/core-go v1.1.16/go.mod h1:DRfobC+SKGGeDbtKeQP8Tkrq4iYF4dZ2sxmTAlreNO4=
 github.com/halushko/tg-bot-go v1.0.3 h1:WDGan/KQnGI1A56B+MI0h1iL3/s4SjTheluUhRtEixQ=
 github.com/halushko/tg-bot-go v1.0.3/go.mod h1:ej40/KfKkGEqgGtz1SzVPqY+JKVimISJvwOFAzIFdLs=
 github.com/hashicorp/consul/api v1.12.0/go.mod h1:6pVBMo0ebnYdt2S3H87XhekM/HHrUoTD2XXb/VrZVy0=

@@ -18,7 +18,7 @@ const (
 	CFirstName  = "first_name"
 	CLastName   = "last_name"
 	CMiddleName = "middle_name"
-	CGroup      = "group"
+	CGroupId    = "group_id"
 
 	CCourseId       = "course_id"
 	CCourseFullName = "course_full_name"
@@ -52,7 +52,7 @@ var tblStudents = sqlite.Table{
 			Type: sqlite.Text,
 		},
 		{
-			Name: CGroup,
+			Name: CGroupId,
 			Type: sqlite.Text,
 		},
 	},

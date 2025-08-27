@@ -3,7 +3,7 @@ module github.com/halushko/member-handler-go
 go 1.25.0
 
 require (
-	github.com/halushko/core-go v1.1.15
+	github.com/halushko/core-go v1.1.16
 	github.com/halushko/tg-bot-go v1.0.3
 )
 
