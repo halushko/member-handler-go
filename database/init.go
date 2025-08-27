@@ -69,7 +69,7 @@ var tblCourses = sqlite.Table{
 			Name:      CChatId,
 			Type:      sqlite.Text,
 			IsUnique:  true,
-			IsNonNull: true,
+			IsNotNull: true,
 		},
 		{
 			Name: CCourseFullName,
@@ -88,12 +88,12 @@ var tblStudentInCourse = sqlite.Table{
 		{
 			Name:      CUserId,
 			Type:      sqlite.Integer,
-			IsNonNull: true,
+			IsNotNull: true,
 		},
 		{
 			Name:      CCourseId,
 			Type:      sqlite.Integer,
-			IsNonNull: true,
+			IsNotNull: true,
 		},
 	},
 }

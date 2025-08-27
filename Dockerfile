@@ -6,6 +6,7 @@ RUN go mod tidy
 RUN CGO_ENABLED=0 go build -o /app/member-handler-go
 
 FROM alpine:latest
+RUN apk add --no-cache sqlite
 WORKDIR /root
 COPY --from=builder /app/member-handler-go /root/member-handler-go
 RUN chmod +x /root/member-handler-go
