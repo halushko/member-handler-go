@@ -42,7 +42,7 @@ func StartMemberJoinedListener() {
 }
 
 func process(chatId int64, userId int64, userLogin string) {
-	log.Printf("[DEBUG] user id=%s userLogin=%s joined to the chat chatId=%d ", userId, userLogin, chatId)
+	log.Printf("[DEBUG] user id=%d userLogin=%s joined to the chat chatId=%d ", userId, userLogin, chatId)
 
 	student := updateUserInfo(userId, userLogin)
 	course := updateCourse(chatId)
