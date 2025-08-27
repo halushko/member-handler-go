@@ -1,4 +1,4 @@
-package member_handler_go
+package main
 
 import (
 	"log"
