@@ -67,7 +67,7 @@ var tblCourses = sqlite.Table{
 		},
 		{
 			Name:      CChatId,
-			Type:      sqlite.Text,
+			Type:      sqlite.Integer,
 			IsUnique:  true,
 			IsNotNull: true,
 		},

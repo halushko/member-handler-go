@@ -3,6 +3,7 @@ package handlers
 import (
 	"fmt"
 	"log"
+	"strconv"
 
 	"github.com/halushko/core-go/nats"
 	"github.com/halushko/member-handler-go/database"
@@ -11,7 +12,7 @@ import (
 
 func StartMemberJoinedListener() {
 	processor := func(data []byte) {
-		userId, args, err := nats.ParseTgBotCommand(data)
+		chatId, args, err := nats.ParseTgBotCommand(data)
 		if err != nil {
 			log.Printf("[ERROR] Помилка при парсингу повідомлення: %v", err)
 			return
@@ -21,8 +22,13 @@ func StartMemberJoinedListener() {
 			return
 		}
 
-		if userId != 0 && args[0] != "" && args[1] != "" {
-			process(userId, args[0], args[1])
+		if chatId != 0 && args[0] != "" {
+			userId, errInt := strconv.ParseInt(args[0], 10, 64)
+			if errInt != nil {
+				log.Printf("[ERROR] Помилка: ID користувача не число: %s", args[0])
+				return
+			}
+			process(chatId, userId, args[1])
 		} else {
 			log.Printf("[ERROR] Помилка: ID користувача чи ID чату порожні")
 		}
@@ -35,7 +41,9 @@ func StartMemberJoinedListener() {
 	nats.StartNatsListener(bot.TelegramMemberJoinedQueue, listener)
 }
 
-func process(userId int64, chatId, userLogin string) {
+func process(chatId int64, userId int64, userLogin string) {
+	log.Printf("[DEBUG] user id=%s userLogin=%s joined to the chat chatId=%d ", userId, userLogin, chatId)
+
 	student := updateUserInfo(userId, userLogin)
 	course := updateCourse(chatId)
 	updateStudentCourse(student[database.CUserId], course[database.CCourseId])
@@ -75,7 +83,7 @@ func updateUserInfo(userId int64, userLogin string) map[string]any {
 	return usr
 }
 
-func updateCourse(chatId string) map[string]any {
+func updateCourse(chatId any) map[string]any {
 	crs := make(map[string]any)
 	crs[database.CChatId] = chatId
 
